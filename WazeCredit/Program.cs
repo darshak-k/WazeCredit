@@ -17,6 +17,9 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
 builder.Services.AddTransient<IMarketForecaster, MarketForecasterV2>(); 
+builder.Services.AddScoped<IValidationChecker, AddressValidationChecker>();
+builder.Services.AddScoped<ICreditValidator , CreditValidator>();
+builder.Services.AddScoped<IValidationChecker, CreditValidationChecker>();
 
 DIAppSettingsConfig.AddAppSettingConfig(builder);
 
