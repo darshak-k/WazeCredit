@@ -1,0 +1,11 @@
+﻿@model List<string> 
+
+<div class="p-4">
+	<h3>AppSettings Configuration</h3>
+	<ul>
+		@foreach(var Message in Model)
+		{
+			<li>@Message</li>
+		}
+	</ul>
+</div>
